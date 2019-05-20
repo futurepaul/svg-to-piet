@@ -6,6 +6,5 @@ edition = "2018"
 
 [dependencies]
 usvg = "0.6"
-kurbo = "0.2"
 svg-piet-macro = { path = "macro" }
 pietify = {path = "pietify"}

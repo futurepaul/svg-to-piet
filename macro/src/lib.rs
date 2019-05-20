@@ -1,9 +1,6 @@
 extern crate proc_macro;
 
-use proc_macro2::TokenStream;
 use quote::*;
-// use std::path::Path;
-use pietify::*;
 use syn::*;
 
 fn create_draw_commands(path: String) -> proc_macro2::TokenStream {
@@ -11,6 +8,7 @@ fn create_draw_commands(path: String) -> proc_macro2::TokenStream {
   let mut stream = proc_macro2::TokenStream::new();
 
   for op in operations {
+    //I guess I can unwrap here because I build this stream myself
     stream.extend(op.parse::<proc_macro2::TokenStream>().unwrap());
   }
 
