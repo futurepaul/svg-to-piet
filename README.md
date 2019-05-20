@@ -4,7 +4,7 @@ This is a simple utility to help convert an SVG into [piet](https://github.com/l
 
 ## Macro usage
 
-The macro imports the SVG at compile time and turns into a function you can call at runtime by passing a paint_ctx.
+The macro imports the SVG at compile time and turns into a function you can call at runtime by passing a paint_ctx. The x and y are the origin you want to paint at (`f64` btw).
 
 ```rust
 use svg_to_piet::*;
@@ -13,7 +13,7 @@ use svg_to_piet::*;
 #[file = "test.svg"]
 struct TrashCan;
 
-TrashCan::draw(paint_ctx, geom);
+TrashCan::draw(paint_ctx, x, y);
 ```
 
 ## Command line usage

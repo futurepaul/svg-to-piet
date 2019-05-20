@@ -37,7 +37,7 @@ pub fn svg_piet_macro_derive(input: proc_macro::TokenStream) -> proc_macro::Toke
 
   let output = quote! {
       impl #name {
-          fn draw(paint_ctx: &mut PaintCtx, geom: &Geometry) {
+          fn draw(paint_ctx: &mut PaintCtx, x: f64, y: f64) {
               #draw_commands
           }
       }

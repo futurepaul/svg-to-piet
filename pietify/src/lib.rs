@@ -74,10 +74,10 @@ pub fn svg_to_strings(path: String) -> Vec<String> {
         for seg in &p.segments {
           match *seg {
             PathSegment::MoveTo { x, y } => {
-              piet_instructions.push(format!("path.moveto(({:.2}, {:.2}));", x, y));
+              piet_instructions.push(format!("path.moveto(({:.2} + x, {:.2} + y));", x, y));
             }
             PathSegment::LineTo { x, y } => {
-              piet_instructions.push(format!("path.lineto(({:.2}, {:.2}));", x, y));
+              piet_instructions.push(format!("path.lineto(({:.2} + x, {:.2} + y));", x, y));
             }
             PathSegment::CurveTo {
               x1,
@@ -89,7 +89,7 @@ pub fn svg_to_strings(path: String) -> Vec<String> {
             } => {
               //QUESTION is this order correct?
               piet_instructions.push(format!(
-                "path.curveto(({:.2}, {:.2}), ({:.2}, {:.2}), ({:.2}, {:.2}));",
+                "path.curveto(({:.2} + x, {:.2} + y), ({:.2} + x, {:.2} + y), ({:.2} + x, {:.2} + y));",
                 x1, y1, x2, y2, x, y
               ));
             }
