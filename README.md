@@ -4,17 +4,21 @@ This is a simple utility to help convert an SVG into [piet](https://github.com/l
 
 ## Macro usage
 
+The macro imports the SVG at compile time and turns into a function you can call at runtime by passing a paint_ctx.
+
 ```
 use svg_to_piet::*;
 
 #[derive(SvgToPiet)]
-#[file = "test2.svg"]
+#[file = "test.svg"]
 struct TrashCan;
 
 TrashCan::draw(paint_ctx, geom);
 ```
 
 ## Command line usage
+
+Outputs a list of draw instructions to the command line so you can copy and paste them wherever you'd like.
 
 ```
 cargo run test.svg
