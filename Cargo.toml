@@ -1,0 +1,11 @@
+[package]
+name = "svg-to-piet"
+version = "0.1.0"
+authors = ["Paul Miller <paul@pauljmiller.com>"]
+edition = "2018"
+
+[dependencies]
+usvg = "0.6"
+kurbo = "0.2"
+svg-piet-macro = { path = "macro" }
+pietify = {path = "pietify"}

@@ -1,0 +1,14 @@
+[lib]
+proc-macro = true
+
+[package]
+name = "svg-piet-macro"
+version = "0.1.0"
+authors = ["Paul Miller <paul@pauljmiller.com>"]
+edition = "2018"
+
+[dependencies]
+proc-macro2 = "0.4"
+syn = "0.15"
+quote = "0.6"
+pietify = { path = "../pietify" } 
