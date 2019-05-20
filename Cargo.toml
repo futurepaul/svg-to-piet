@@ -3,6 +3,7 @@ name = "svg-to-piet"
 version = "0.1.0"
 authors = ["Paul Miller <paul@pauljmiller.com>"]
 edition = "2018"
+license = "MIT/Apache-2.0"
 
 [dependencies]
 usvg = "0.6"
